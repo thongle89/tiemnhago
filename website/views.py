@@ -2,7 +2,12 @@ from django.shortcuts import render
 
 
 def home(request):
-	return render(request,'index.html',{})
+	if "user_name" not in request.session:
+		request.session["user_name"]=[]
+
+	return render(request,'index.html',{
+		"user_name": request.session["user_name"]
+		})
 
 def contact(request):
 	return render(request,'contact.html',{})
@@ -27,8 +32,9 @@ def elements(request):
 
 def success(request):
 	if request.method == "POST":
+
 		user_name = request.POST['user_name']
-		
+		request.session["user_name"]=user_name
 		
 		
 		return render(request,'index.html',{

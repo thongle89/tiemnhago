@@ -115,7 +115,13 @@
                                         </form>
                                     </li>
                                     <li>
-                                        <a href="{%url 'login'%}" class="account-btn" target="_blank">Đăng Nhập {{user_name}}</a>
+                                        <a href="{%url 'login'%}" class="account-btn" target="_blank">
+                                        {% if user_name != null %}
+                                            {{user_name}}
+                                        {% else %}
+                                            Đăng Nhập
+                                        {% endif %}
+                                     </a>
                                     </li>
                                     <li>
                                         <div class="card-stor">
