@@ -69,9 +69,12 @@
                                         <li><a href="{%url 'home'%}">Trang Chủ</a></li> 
                                         <li><a href="{%url 'product'%}">Sản Phẩm</a>
                                             <ul class="submenu">
-                                                <li><a href="{%url 'login'%}">Gỗ Nhà Gô</a></li>
-                                                <li><a href="{%url 'cart'%}">2hand Nhà Gô</a></li>
-                                                <li><a href="categories.html">Đất Nhà Gô</a></li>
+                                                {% for category in categories %}
+                                                <li>{{category}}</li>
+
+
+                                                {% endfor %}
+                                                
                                             </ul>
 
                                         </li>

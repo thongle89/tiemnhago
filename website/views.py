@@ -1,19 +1,22 @@
 from django.shortcuts import render
-
+from details.models import *
 
 def home(request):
 	if "user_name" not in request.session:
 		request.session["user_name"]=[]
 
 	return render(request,'index.html',{
-		"user_name": request.session["user_name"]
+		"user_name": request.session["user_name"],
+		"categories": DanhMuc.objects.all(),
 		})
 
 def contact(request):
 	return render(request,'contact.html',{})
 
 def product(request):
-	return render(request,'product.html',{})
+	return render(request,'product.html',{
+		"categories": DanhMuc.objects.all(),
+		})
 
 def product_details(request):
 	return render(request,'product_details.html',{})
