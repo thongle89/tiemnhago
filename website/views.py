@@ -16,6 +16,7 @@ def contact(request):
 def product(request):
 	return render(request,'product.html',{
 		"categories": DanhMuc.objects.all(),
+		"products":SanPham.objects.all(),
 		})
 
 def product_details(request):

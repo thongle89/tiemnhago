@@ -45,13 +45,16 @@
                             <!--Nav Button  -->
                             <nav>                         
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                    <a class="nav-item nav-link active" id="nav-Sofa-tab" data-toggle="tab" href="#nav-Sofa" role="tab" aria-controls="nav-Sofa" aria-selected="true">Sofa</a>
-                                    <a class="nav-item nav-link" id="nav-Table-tab" data-toggle="tab" href="#nav-Table" role="tab" aria-controls="nav-Table" aria-selected="false">Table</a>
-                                    <a class="nav-item nav-link" id="nav-Chair-tab" data-toggle="tab" href="#nav-Chair" role="tab" aria-controls="nav-Chair" aria-selected="false">Chair</a>
+                                    
 
-                                    <a class="nav-item nav-link" id="nav-Bed-tab" data-toggle="tab" href="#nav-Bed" role="tab" aria-controls="nav-Bed" aria-selected="false">Bed</a>
-                                    <a class="nav-item nav-link" id="nav-Lightning-tab" data-toggle="tab" href="#nav-Lightning" role="tab" aria-controls="nav-Lightning" aria-selected="false">Lightning</a>
-                                    <a class="nav-item nav-link" id="nav-Decore-tab" data-toggle="tab" href="#nav-Decore" role="tab" aria-controls="nav-Decore" aria-selected="false">Decore</a>
+                                    <a class="nav-item nav-link active" id="nav-Sofa-tab" data-toggle="tab" href="#nav-Sofa" role="tab" aria-controls="{{category.category}}" aria-selected="true">Gỗ</a>
+
+
+                                    
+                                    <a class="nav-item nav-link" id="nav-Table-tab" data-toggle="tab" href="#nav-Table" role="tab" aria-controls="nav-Table" aria-selected="false">2hand</a>
+                                    <a class="nav-item nav-link" id="nav-Chair-tab" data-toggle="tab" href="#nav-Chair" role="tab" aria-controls="nav-Chair" aria-selected="false">Đất</a>
+
+                                    
                                 </div>
                             </nav>
                             <!--End Nav Button  -->
@@ -63,107 +66,27 @@
                     <div class="tab-content" id="nav-tabContent">
                         <!-- card one -->
                         <div class="tab-pane fade show active" id="nav-Sofa" role="tabpanel" aria-labelledby="nav-Sofa-tab">
+                            
                             <div class="row">
+                                {% for product in products%}
                                 <div class="col-lg-4 col-md-6 col-sm-6">
+                                    
                                     <div class="single-new-arrival mb-50 text-center">
                                         <div class="popular-img">
-                                            <a href="{%url 'product_details'%}"><img src="{%static 'change/httng01.jpg'%}" alt="">
+                                            <a href="{%url 'product_details'%}"><img src="{{ product.image.url }}" alt="">
                                         </div>
                                         <div class="popular-caption">
-                                            <h3><a href="{%url 'product_details'%}">Hũ Thủy tinh nắp gỗ</a></h3>
-                                            <span>40.000 VNĐ</span>
+                                            <h3><a href="{%url 'product_details'%}">{{ product.title}}</a></h3>
+                                            <span>{{ product.price }} VNĐ</span>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-6 col-sm-6">
-                                    <div class="single-new-arrival mb-50 text-center">
-                                        <div class="popular-img">
-                                            <img src="{%static 'assets/img/gallery/popular2.png'%}" alt="">
-                                        </div>
-                                        <div class="popular-caption">
-                                            <h3><a href="{%url 'product_details'%}">Bly Microfiber / Microsuede 56" Armless Loveseat</a></h3>
-                                            <span>$367</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-6">
-                                    <div class="single-new-arrival mb-50 text-center">
-                                        <div class="popular-img">
-                                            <img src="{%static 'assets/img/gallery/popular3.png'%}" alt="">
-                                        </div>
-                                        <div class="popular-caption">
-                                            <h3><a href="{%url 'product_details' %}">Bly Microfiber / Microsuede 56" Armless Loveseat</a></h3>
-                                            <span>$367</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-6">
-                                    <div class="single-new-arrival mb-50 text-center">
-                                        <div class="popular-img">
-                                            <img src="{%static 'assets/img/gallery/popular4.png'%}" alt="">
-                                        </div>
-                                        <div class="popular-caption">
-                                            <h3><a href="{%url 'product_details'%}">Bly Microfiber / Microsuede 56" Armless Loveseat</a></h3>
-                                            <span>$367</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-6">
-                                    <div class="single-new-arrival mb-50 text-center">
-                                        <div class="popular-img">
-                                            <img src="{%static 'assets/img/gallery/popular5.png'%}" alt="">
-                                        </div>
-                                        <div class="popular-caption">
-                                            <h3><a href="{%url 'product_details'%}">Bly Microfiber / Microsuede 56" Armless Loveseat</a></h3>
-                                            <span>$367</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-6">
-                                    <div class="single-new-arrival mb-50 text-center">
-                                        <div class="popular-img">
-                                            <img src="{%static 'assets/img/gallery/popular6.png'%}" alt="">
-                                        </div>
-                                        <div class="popular-caption">
-                                            <h3><a href="{%url 'product_details'%}">Bly Microfiber / Microsuede 56" Armless Loveseat</a></h3>
-                                            <span>$367</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-6">
-                                    <div class="single-new-arrival mb-50 text-center">
-                                        <div class="popular-img">
-                                            <img src="{%static 'assets/img/gallery/popular7.png'%}" alt="">
-                                        </div>
-                                        <div class="popular-caption">
-                                            <h3><a href="{%url 'product_details'%}">Bly Microfiber / Microsuede 56" Armless Loveseat</a></h3>
-                                            <span>$367</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-6">
-                                    <div class="single-new-arrival mb-50 text-center">
-                                        <div class="popular-img">
-                                            <img src="{%static 'assets/img/gallery/popular8.png'%}" alt="">
-                                        </div>
-                                        <div class="popular-caption">
-                                            <h3><a href="{%url 'product_details'%}">Bly Microfiber / Microsuede 56" Armless Loveseat</a></h3>
-                                            <span>$367</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-6">
-                                    <div class="single-new-arrival mb-50 text-center">
-                                        <div class="popular-img">
-                                            <img src="{%static 'assets/img/gallery/popular9.png'%}" alt="">
-                                        </div>
-                                        <div class="popular-caption">
-                                            <h3><a href="{%url 'product_details'%}">Bly Microfiber / Microsuede 56" Armless Loveseat</a></h3>
-                                            <span>$367</span>
-                                        </div>
-                                    </div>
-                                </div>
+                                {%empty%}
+                                    
+                                {% endfor %}
+                                
                             </div>
+                            
                         </div>
                         <!-- Card two -->
                         <div class="tab-pane fade" id="nav-Table" role="tabpanel" aria-labelledby="nav-Table-tab">
