@@ -2,14 +2,15 @@ from django.db import models
 
 # Create your models here.
 class DanhMuc(models.Model):
+	code = models.CharField(max_length = 3)
 	category = models.CharField(max_length = 20)
-	# code = models.CharField(max_length = 3)
+	
 
 	def __str__(self):
-		return f"{self.category}"
+		return f"{self.category} ({self.code})"
 
 class SanPham(models.Model):
-	category = models.ForeignKey(DanhMuc, on_delete = models.CASCADE, related_name = "categories", default =1)
+	category = models.ForeignKey(DanhMuc, on_delete = models.CASCADE, related_name = "categories")
 	sku = models.AutoField(primary_key = True)
 	title = models.CharField(max_length=100)
 	price = models.IntegerField()
