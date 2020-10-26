@@ -70,13 +70,12 @@
                                         <li><a href="{%url 'product'%}">Sản Phẩm</a>
                                             <ul class="submenu">
                                                 <li><a href="">--Tất Cả--</a></li>
-                                                <!-- {% for categor in categories %} -->
-                                                <li>Gỗ Nhà Gô</li>
-                                                <li>2Hand Nhà Gô</li>
-                                                <li>Đất Nhà Gô</li>
+                                                {% for categor in categories %}
+                                                <li>{{categor.category}} Nhà Gô</li>
+                                                
 
 
-                                                <!-- {% endfor %} -->
+                                                {% endfor %}
                                                 
                                             </ul>
 
