@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'website','details',
+    'website','details','storages',
 ]
 
 MIDDLEWARE = [
@@ -117,9 +117,34 @@ STATICFILES_DIRS = [
 
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
 
-MEDIA_URL = '/uploads/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+# MEDIA_URL = '/uploads/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+
+#S3 BUCKETS CONFIG
+
+AWS_ACCESS_KEY_ID = 'AKIAS6W4BBA7ECSBK54G'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'tiemnhago'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+'''
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+<CORSRule>
+    <AllowedOrigin>*</AllowedOrigin>
+    <AllowedMethod>GET</AllowedMethod>
+    <AllowedMethod>POST</AllowedMethod>
+    <AllowedMethod>PUT</AllowedMethod>
+    <AllowedHeader>*</AllowedHeader>
+</CORSRule>
+</CORSConfiguration>
+'''
