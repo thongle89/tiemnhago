@@ -3,10 +3,10 @@ from details.models import *
 
 def home(request):
 	if "user_name" not in request.session:
-		request.session["user_name"]=[]
+		request.session["user_name"] = []
 
 	return render(request,'index.html',{
-		"user_name": request.session["user_name"],
+		"user_name" : request.session["user_name"],
 		"categories": DanhMuc.objects.all(),
 		})
 

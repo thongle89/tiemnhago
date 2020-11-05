@@ -19,4 +19,10 @@ class SanPham(models.Model):
 	brief = models.TextField(max_length=150)
 	description = models.TextField(max_length=1000)
 	def __str__(self):
-		return f"{self.sku} {self.image}"
+		return f" {self.title} ({self.sku})"
+
+class ThuVien(models.Model):
+	title = models.ForeignKey(SanPham,on_delete = models.CASCADE,related_name= "titles")
+	image = models.ImageField(upload_to='%Y/%m/%d/')
+	def __str__(self):
+		return f"{self.title}"

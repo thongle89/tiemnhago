@@ -7,3 +7,4 @@ class SanPhamAdmin(admin.ModelAdmin):
 
 admin.site.register(SanPham,SanPhamAdmin)
 admin.site.register(DanhMuc)
+admin.site.register(ThuVien)
